@@ -1,0 +1,11 @@
+hubot-watch - https://www.npmjs.com/package/hubot-watch
+hubot-isup - https://www.npmjs.com/package/hubot-isup
+
+
+Expected env vars
+-----------------
+
+HUBOT_WATCH_USERNAME
+HUBOT_WATCH_PASSWORD
+
+
