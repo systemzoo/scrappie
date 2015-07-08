@@ -6,6 +6,7 @@
   "description": "A helper for the System Zoo",
   "dependencies": {
     "hubot": "^2.13.2",
+    "hubot-appearin": "^1.0.2",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.1.5",
     "hubot-google-translate": "^0.2.0",

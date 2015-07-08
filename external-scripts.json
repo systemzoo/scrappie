@@ -7,5 +7,6 @@
   "hubot-isup",
   "hubot-watch",
   "hubot-seen",
-  "hubot-ping"
+  "hubot-ping",
+  "hubot-appearin"
 ]
