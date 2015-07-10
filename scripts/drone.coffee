@@ -17,7 +17,7 @@
 module.exports = (robot) ->
   robot.hear /^drone (.*)/i, (msg) ->
     project = msg.match[1]
-    processBuild(robot, project)
+    processBuild(msg, project)
 
 # The current API for the self hosted DRONE implementation is a multi-step
 # process.
@@ -47,8 +47,9 @@ findRepository = (robot, drone_url, drone_token, project) ->
         for item in resp
             if item['name'] == project and item['active'] == true
                 console.log("Found project: #{item['url']}")
-                robot.send "going ham on #{item['url']}"
                 findSha1(robot, drone_url, drone_token, item)
+                return
+        robot.reply "Couldnt find a project for #{project}"
 
 
 findSha1 = (robot, drone_url, drone_token, repo) ->
@@ -63,8 +64,8 @@ findSha1 = (robot, drone_url, drone_token, repo) ->
         console.log(build_url)
         robot.http(build_url).post() (err, res, body) ->
             if err
-                robot.send "Error executing build - Check log"
+                robot.reply "Error executing build - Check log"
             else
-                robot.send "Going HAM on #{repo['url']}:#{resp[0]['branch']} - #{resp[0]['sha']}"
+                robot.reply "Going HAM on #{repo['url']}:#{resp[0]['branch']} - #{resp[0]['sha']}"
 
 
