@@ -15,7 +15,6 @@ module.exports = function(grunt) {
         },
         exec: {
             hubot: 'bin/hubot -t',
-            npm_purge: 'rm -rf node_modules/*',
         },
         jsonlint: {
             dependencies: {
