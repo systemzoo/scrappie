@@ -9,6 +9,6 @@
   "hubot-seen",
   "hubot-ping",
   "hubot-appearin",
-  "hubot-github-identity",
-  "hubot-github-notify"
+  "hubot-github-event-announcer",
+  "hubot-systemzoo-welcome"
 ]
